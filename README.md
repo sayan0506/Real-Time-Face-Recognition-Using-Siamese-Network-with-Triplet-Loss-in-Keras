@@ -40,6 +40,14 @@ By using a 128-neuron fully connected layer as its last layer, the model ensures
 
 ![Image1](https://github.com/sayan0506/Real-Time-Face-Recognition-Using-Siamese-Network-with-Triplet-Loss-in-Keras/blob/master/Images/distance_kiank.png)
 
+So, an encoding is a good one if: 
+- The encodings of two images of the same person are quite similar to each other 
+- The encodings of two images of different persons are very different
+
+The triplet loss function formalizes this, and tries to "push" the encodings of two images of the same person (Anchor and Positive) closer together, while "pulling" the encodings of two images of different persons (Anchor, Negative) further apart. 
+
+![Image2](https://github.com/sayan0506/Real-Time-Face-Recognition-Using-Siamese-Network-with-Triplet-Loss-in-Keras/blob/master/Images/triplet_comparison.png)
+
 # The Triplet Loss
 
 For an image  x, we denote its encoding  f(x), where f is the function computed by the neural network.
