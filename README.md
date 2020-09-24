@@ -15,6 +15,26 @@ FaceNet learns a neural network that encodes a face image into a vector of 128 n
 - Use a pretrained model to map face images into 128-dimensional encodings
 - Use these encodings to perform face verification and face recognition
 
+# Naive Face Verification
+
+In Face Verification, you're given two images and you have to tell if they are of the same person. The simplest way to do this is to compare the two images pixel-by-pixel. If the distance between the raw images are less than a chosen threshold, it may be the same person! 
+
+Of course, this algorithm performs really poorly, since the pixel values change dramatically due to variations in lighting, orientation of the person's face, even minor changes in head position, and so on. 
+
+We can see that rather than using the raw image, you can learn an encoding $f(img)$ so that element-wise comparisons of this encoding gives more accurate judgements as to whether two pictures are of the same person.
+
+# Encoding face images into a 128-dimensional vector 
+
+## Using an ConvNet  to compute encodings
+
+The FaceNet model takes a lot of data and a long time to train. So following common practice in applied deep learning settings, let's just load weights that someone else has already trained. The network architecture follows the Inception model from [Szegedy *et al.*](https://arxiv.org/abs/1409.4842). We have provided an inception network implementation. You can look in the file `inception_blocks.py` to see how it is implemented.
+
+The key things are:
+
+- This network uses 96x96 dimensional RGB images as its input. Specifically, inputs a face image (or batch of $m$ face images) as a tensor of shape $(m, n_C, n_H, n_W) = (m, 3, 96, 96)$ 
+- It outputs a matrix of shape $(m, 128)$ that encodes each input face image into a 128-dimensional vector
+
+
 ### References:
 
 - Florian Schroff, Dmitry Kalenichenko, James Philbin (2015). [FaceNet: A Unified Embedding for Face Recognition and Clustering](https://arxiv.org/pdf/1503.03832.pdf)
