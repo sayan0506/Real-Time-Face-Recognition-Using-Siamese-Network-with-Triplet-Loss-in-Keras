@@ -34,6 +34,20 @@ The key things are:
 - This network uses 96x96 dimensional RGB images as its input. Specifically, inputs a face image (or batch of $m$ face images) as a tensor of shape $(m, n_C, n_H, n_W) = (m, 3, 96, 96)$ 
 - It outputs a matrix of shape $(m, 128)$ that encodes each input face image into a 128-dimensional vector
 
+By using a 128-neuron fully connected layer as its last layer, the model ensures that the output is an encoding vector of size 128. You then use the encodings the compare two face images as follows:
+
+<img src="images/distance_kiank.png" style="width:680px;height:250px;">
+<caption><center> <u> <font color='purple'> **Figure 2**: <br> </u> <font color='purple'> By computing a distance between two encodings and thresholding, you can determine if the two pictures represent the same person</center></caption>
+
+So, an encoding is a good one if: 
+- The encodings of two images of the same person are quite similar to each other 
+- The encodings of two images of different persons are very different
+
+The triplet loss function formalizes this, and tries to "push" the encodings of two images of the same person (Anchor and Positive) closer together, while "pulling" the encodings of two images of different persons (Anchor, Negative) further apart. 
+
+<img src="images/triplet_comparison.png" style="width:280px;height:150px;">
+<br>
+<caption><center> <u> <font color='purple'> **Figure 3**: <br> </u> <font color='purple'> In the next part, we will call the pictures from left to right: Anchor (A), Positive (P), Negative (N)  </center></caption>
 
 ### References:
 
