@@ -34,9 +34,11 @@ The FaceNet model takes a lot of data and a long time to train. So following com
 The key things are:
 
 - This network uses 96x96 dimensional RGB images as its input. Specifically, inputs a face image (or batch of $m$ face images) as a tensor of shape $(m, n_C, n_H, n_W) = (m, 3, 96, 96)$ 
-- It outputs a matrix of shape $(m, 128)$ that encodes each input face image into a 128-dimensional vector
+- It outputs a matrix of shape $(m, 128)$ that encodes each input face image into a 128-dimensional vector.
 
 By using a 128-neuron fully connected layer as its last layer, the model ensures that the output is an encoding vector of size 128. You then use the encodings the compare two face images as follows:
+
+![Image1](https://github.com/sayan0506/Real-Time-Face-Recognition-Using-Siamese-Network-with-Triplet-Loss-in-Keras/blob/master/Images/distance_kiank.png)
 
 # The Triplet Loss
 
