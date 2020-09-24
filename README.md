@@ -17,7 +17,9 @@ FaceNet learns a neural network that encodes a face image into a vector of 128 n
 
 # Naive Face Verification
 
-In Face Verification, you're given two images and you have to tell if they are of the same person. The simplest way to do this is to compare the two images pixel-by-pixel. If the distance between the raw images are less than a chosen threshold, it may be the same person! 
+In Face Verification, you're given two images and you have to tell if they are of the same person. The simplest way to do this is to compare the two images pixel-by-pixel. If the distance between the raw images are less than a chosen threshold, it may be the same person
+
+![Image](https://github.com/sayan0506/Real-Time-Face-Recognition-Using-Siamese-Network-with-Triplet-Loss-in-Keras/blob/master/Images/pixel_comparison.png)
 
 Of course, this algorithm performs really poorly, since the pixel values change dramatically due to variations in lighting, orientation of the person's face, even minor changes in head position, and so on. 
 
