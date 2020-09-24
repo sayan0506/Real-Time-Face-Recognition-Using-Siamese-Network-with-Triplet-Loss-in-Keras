@@ -36,16 +36,19 @@ The key things are:
 
 By using a 128-neuron fully connected layer as its last layer, the model ensures that the output is an encoding vector of size 128. You then use the encodings the compare two face images as follows:
 
-1.2 - The Triplet Loss
-For an image  xx , we denote its encoding  f(x)f(x) , where  ff  is the function computed by the neural network.
+# The Triplet Loss
 
-
+For an image  x, we denote its encoding  f(x), where f is the function computed by the neural network.
 
 Training will use triplets of images  (A,P,N)(A,P,N) :
 
 A is an "Anchor" image--a picture of a person.
 P is a "Positive" image--a picture of the same person as the Anchor image.
 N is a "Negative" image--a picture of a different person than the Anchor image.
+
+# FaceNet Model
+
+FaceNet is trained by minimizing the triplet loss. But since training requires a lot of data and a lot of computation, we won't train it from scratch here. Instead, we load a previously trained model. Load a model using the following cell; this might take a couple of minutes to run. 
 
 ### References:
 
