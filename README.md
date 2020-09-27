@@ -1,5 +1,8 @@
 # Real-Time-Face-Recognition-Using-Siamese-Network-with-Triplet-Loss-in-Keras
+
 Real-Time-Face-Recognition-Using-Siamese-Network-with-Triplet-Loss-in-Keras
+
+Authors: [Sayan Hazra](https://github.com/sayan0506) & [Sankalpa Chowdhury](https://github.com/sankalpachowdhury)
 
 Here we will build a face recognition system. Many of the ideas presented here are from [FaceNet](https://arxiv.org/pdf/1503.03832.pdf). In lecture, we also talked about [DeepFace](https://research.fb.com/wp-content/uploads/2016/11/deepface-closing-the-gap-to-human-level-performance-in-face-verification.pdf). 
 
